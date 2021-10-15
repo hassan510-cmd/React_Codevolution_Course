@@ -1,5 +1,6 @@
 import React from 'react'
 
+// regular function component
 function Greet(args){
     // another way to retrive args destructing 
     const {name,age} = args
@@ -12,6 +13,7 @@ function Greet(args){
          )
 }
 
+// arrow function component
 export const Career = () => <h3>Python developer</h3>
 
 export default Greet

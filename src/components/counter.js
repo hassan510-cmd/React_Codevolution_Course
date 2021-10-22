@@ -1,40 +1,42 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-    constructor(){
+    constructor() {
         super()
-        this.state={a:1}
-        this.btn_text="+"
-        this.count=0
+        this.state = { a: 1 }
+        this.btn_text = "+"
+        this.count = 0
         // console.log(a+63);
-        
-    }
-    
-    
-    increment() {
-        var {a} = this.state
 
-        console.log(a+12);
+    }
+
+
+    increment() {
+        var { a } = this.state
+
+        console.log(a + 12);
         this.setState(
             {
-                a:this.state.a+1
-            },()=>console.log("after update",this.state.a)
-            )
-        console.log("before update",this.state.a);
-      }
+                a: this.state.a + 1
+            }, () => console.log("after update", this.state.a)
+        )
+        console.log("before update", this.state.a);
+    }
 
-      increment2() {
-        this.setState((prevState)=>(
+    increment2() {
+        this.setState((prevState) => (
             {
-                a:prevState.a+1
-            }))
-        console.log("before update",this.state.a);
-      }
+                a: prevState.a + 1
+            }
+            )
+            )
+        console.log("before update", this.state.a);
+    }
 
-      inc() { 
+    inc() {
         this.increment()
-        
-     }
+
+    }
 
     // inc() { 
     //     this.increment2()
@@ -45,30 +47,30 @@ class Counter extends Component {
     //  }
 
 
-    render(){
-        const {he} = this.props
-        return(
+    render() {
+        const { he } = this.props
+        return (
             <div>
                 <h1>{this.state.a}</h1>
-                <button onClick={()=>this.inc()}>
+                <button onClick={() => this.inc()}>
                     increment
                 </button>
 
                 <h1>{this.count}</h1>
 
-                <button onClick={()=>{
+                <button onClick={() => {
                     console.log(he);
-                    this.setState({a:1})
-                    this.count+=1
+                    this.setState({ a: 1 })
+                    this.count += 1
                     console.log(this.count);
                 }}>
                     {this.btn_text}
                 </button>
 
-                <button onClick={()=>{
-                    this.setState({a:this.state.a-1})
-                    console.log("this.state.a",this.state.a);
-                    this.count-=1
+                <button onClick={() => {
+                    this.setState({ a: this.state.a - 1 })
+                    console.log("this.state.a", this.state.a);
+                    this.count -= 1
                     console.log(this.count);
                 }}>
                     -

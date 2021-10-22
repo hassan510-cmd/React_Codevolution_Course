@@ -21,7 +21,7 @@ export default class EventBind extends Component {
         return (
             <div>
                 {this.state.message}
-                <div style={{display:'flex','flex-direction': 'column'}}>
+                <div style={{display:'flex','flexDirection': 'column'}}>
                     {/* 1- wrong way */}
                     <button onClick={this.say_googbye}>wrong goodbye</button>
                     {/* 2- right way */}

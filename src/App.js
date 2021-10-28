@@ -20,6 +20,15 @@ import Form from './components/Form';
 import LifecycleA from './components/LifecycleA';
 import Fragments from './components/Fragments';
 import Table from './components/Table';
+import ComparePureandNot from './components/ComparePureandNot';
+import Refs from './components/Refs';
+import Putfocus from './components/Putfocus';
+import FRParentinput from './components/FRParentinput';
+import Portal from './components/Portal';
+import WrongComp from './components/WrongComp';
+import BoundryErorr from './components/BoundryErorr';
+import HoverCounter from './components/HoverCounter';
+import ClickCounter from './components/ClickCounter';
 function App() {
   // console.log('asdasd'); 
   // console.log(<Greet/>);
@@ -28,6 +37,29 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1 >--------- ex : HOC    ------------</h1>
+        <ClickCounter name2='hassan2'/>
+        <HoverCounter/>
+        <h1 >--------- ex : wrong    ------------</h1>
+        <BoundryErorr>
+
+        <WrongComp name="wrongs" />
+        </BoundryErorr>
+        <BoundryErorr>
+
+        <WrongComp name="wrongs" />
+        </BoundryErorr>
+        {/* <WrongComp name="wrong" /> */}
+        <h1 >--------- ex : protals    ------------</h1>
+        <Portal />
+        <h1 >--------- ex : forward Refs    ------------</h1>
+        <FRParentinput />
+        <h1 >--------- ex : remote from parent Refs    ------------</h1>
+        <Putfocus />
+        <h1 >--------- ex : Refs    ------------</h1>
+        <Refs />
+        <h1 >--------- ex : PureComponent clg   ------------</h1>
+        <ComparePureandNot />
         <h1 >--------- ex : Fragments   ------------</h1>
         <Fragments />
         <Table />

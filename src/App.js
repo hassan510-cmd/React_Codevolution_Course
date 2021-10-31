@@ -29,6 +29,9 @@ import WrongComp from './components/WrongComp';
 import BoundryErorr from './components/BoundryErorr';
 import HoverCounter from './components/HoverCounter';
 import ClickCounter from './components/ClickCounter';
+import RenderProps from './components/RenderProps';
+import { Sender } from './components/userContext';
+import ComponentA from './components/ComponentA';
 function App() {
   // console.log('asdasd'); 
   // console.log(<Greet/>);
@@ -37,17 +40,27 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1 >--------- ex : Context    ------------</h1>
+        <Sender value='sender-value'>
+          <ComponentA/>
+        </Sender>    
+        <h1 >--------- ex : Render Props    ------------</h1>
+        <RenderProps render={(count, increment) => (
+          <ClickCounter count={count} increment_count={increment} />
+        )}
+        />
+
         <h1 >--------- ex : HOC    ------------</h1>
-        <ClickCounter name2='hassan2'/>
-        <HoverCounter/>
+        <ClickCounter name2='hassan2' />
+        <HoverCounter />
         <h1 >--------- ex : wrong    ------------</h1>
         <BoundryErorr>
 
-        <WrongComp name="wrongs" />
+          <WrongComp name="wrongs" />
         </BoundryErorr>
         <BoundryErorr>
 
-        <WrongComp name="wrongs" />
+          <WrongComp name="wrongs" />
         </BoundryErorr>
         {/* <WrongComp name="wrong" /> */}
         <h1 >--------- ex : protals    ------------</h1>
@@ -97,12 +110,12 @@ function App() {
           <button type="button" class="btn btn-primary">
             Notifications <span class="badge bg-dark">4</span>
           </button>
-         
+
           <span class="badge bg-dark">Dark</span>
           <span class="badge badge-pill badge-danger">Danger</span>
           <label for="collaborativa_utenti_pollo"><span class="badge bg-danger">pollo</span></label>
-            
-          
+
+
         </Greet>
         <Greet name="hassan" age="15" /> <Other />
         <Career />
